@@ -1,0 +1,25 @@
+{
+    "name": "豆瓣读书HDU图书馆插件",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "在豆瓣读书条目页面显示HDU图书馆內该图书信息",
+    "permissions": ["tabs", "http://210.32.33.91:8080/opac/*"],
+    "icons": {
+        "128": "icon.jpg",
+        "16": "icon.jpg",
+        "32": "icon.jpg",
+        "48": "icon.jpg"
+    },
+    "content_scripts": [
+        {
+            "js": ["jquery.js", "inject.js"],
+            "matches": ["http://book.douban.com/*"],
+            "run_at": "document_end"
+        }
+    ],
+    "browser_action": {
+        "default_icon": "icon.jpg",
+        "default_popup": "popup.html"
+    }
+    
+}
